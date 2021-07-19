@@ -29,4 +29,14 @@ class Album
   def self.find(id)
     @@albums[id]
   end
+
+  def update(name)
+    @name = name
+  end
+
+  def delete
+    @@albums.delete(self.id)
+  end
 end
+
+# Michael Reiersgaard <michael.reiersgaard@gmail.com>
