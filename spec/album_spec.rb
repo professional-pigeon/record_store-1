@@ -91,8 +91,7 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "The berries", "Rap", "2020", nil)
       album2.save()
-      Album.sort
-      expect(Album.all).to(eq([album2, album]))
+      expect(Album.sort_albums).to(eq([album2, album]))
     end
   end
 end
