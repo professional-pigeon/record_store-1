@@ -44,6 +44,7 @@ get('/albums/:id') do
       erb(:album)
     else
       @albums = Album.all
+      @bad_result = "try again, album doesn't exist"
       erb(:albums)
     end
   else
