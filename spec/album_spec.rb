@@ -39,7 +39,7 @@ describe '#Album' do
 
   describe('#==') do
     it("is the same album if it has the same attributes as another album") do
-      album2 = Album.new("Blue", "The berries", "Rap", "2020", nil)
+      album = Album.new("Blue", "The berries", "Rap", "2020", nil)
       album2 = Album.new("Blue", "The berries", "Rap", "2020", nil)
       expect(album).to(eq(album2))
     end
