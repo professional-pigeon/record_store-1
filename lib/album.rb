@@ -40,6 +40,14 @@ class Album
   def delete
     @@albums.delete(self.id)
   end
-end
 
-# Michael Reiersgaard <michael.reiersgaard@gmail.com>
+  def self.search(name)
+    id = 0
+    @@albums.each do |album|
+      if album[1].name == name
+        id = album[1].id
+      end
+    end
+    return id
+  end
+end
