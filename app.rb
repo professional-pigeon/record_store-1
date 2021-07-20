@@ -35,8 +35,21 @@ get('/albums/new') do
 end
 
 get('/albums/:id') do
-  @album = Album.find(params[:id].to_i())
-  erb(:album)
+  if params[:search] != nil
+    item = params[:search]
+    album_id = 0
+    album_id = Album.search(item)
+    if album_id != 0
+      @album = Album.find(album_id)
+      erb(:album)
+    else
+      @albums = Album.all
+      erb(:albums)
+    end
+  else
+    @album = Album.find(params[:id].to_i())
+    erb(:album)
+  end
 end
 
 post('/albums') do
