@@ -21,7 +21,10 @@ end
 
 post('/albums') do
   name = params[:album_name]
-  album = Album.new(name, nil)
+  artist = params[:artist]
+  genre = params[:genre]
+  year = params[:year]
+  album = Album.new(name, artist, genre, year, nil)
   album.save()
   @albums = Album.all()
   erb(:albums)

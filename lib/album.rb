@@ -4,8 +4,11 @@ class Album
   @@albums = {}
   @@total_rows = 0
 
-  def initialize(name, id)
+  def initialize(name, artist, genre, year, id)
     @name = name
+    @artist = artist
+    @genre = genre
+    @year = year
     @id = id || @@total_rows += 1
   end
 
