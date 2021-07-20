@@ -50,4 +50,12 @@ class Album
     end
     return id
   end
+
+  def self.sort
+    @@albums = @@albums.sort_by {|album| album[1].name}
+    @@albums = @@albums.flatten
+    # sorted_arrays = @@albums.map { |album| }
+    # [[album], [album2]]
+    # [album], [album]
+  end
 end

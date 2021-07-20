@@ -81,8 +81,18 @@ describe '#Album' do
       album.save()
       album2 = Album.new("Blue", "The berries", "Rap", "2020", nil)
       album2.save()
-      album.delete()
       expect(Album.search("Blue")).to(eq(2))
+    end
+  end
+
+  describe('.sort') do
+    it("sorts albums by name") do
+      album = Album.new("Giant Steps", "The Black Keys", "Rock", "2019", nil)
+      album.save()
+      album2 = Album.new("Blue", "The berries", "Rap", "2020", nil)
+      album2.save()
+      Album.sort
+      expect(Album.all).to(eq([album2, album]))
     end
   end
 end
